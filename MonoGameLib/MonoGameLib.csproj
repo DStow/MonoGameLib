@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Camera.cs" />
+    <Compile Include="Core\GameObject.cs" />
     <Compile Include="Core\RectangleF.cs" />
     <Compile Include="Enumeration\Enumeration.cs" />
     <Compile Include="Interfaces\IContentLoadable.cs" />

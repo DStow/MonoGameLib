@@ -28,28 +28,43 @@ namespace MonoGameLib.Core
         {
             get
             {
-                return new RectangleF(Position, Size);
+                return new RectangleF(Position.X - (Size.X / 2), Position.Y - (Size.Y / 2), Size.X, Size.Y);
             }
         }
 
-        public void Initialize()
+        /// <summary>
+        /// Rotation
+        /// </summary>
+        public float Rotation { get; set; }
+
+        public virtual Vector2 Origin
+        {
+            get;
+        }
+
+        public virtual void Initialize()
         {
 
         }
 
-        public void LoadContent(ContentManager content)
+        public virtual void LoadContent(ContentManager content)
         {
 
         }
 
-        public void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
 
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
 
+        }
+
+        protected virtual void DrawObjectTexture(SpriteBatch spriteBatch, Texture2D texture)
+        {
+            spriteBatch.Draw(texture, Area, null, Color.White, Rotation, Origin, SpriteEffects.None, 1);
         }
     }
 }

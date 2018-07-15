@@ -18,7 +18,7 @@ namespace MonoGameLib.Core
         public Vector2 Size { get; set; }
         public float Rotation { get; set; }
         public Anchor Anchor { get; set; }
-        public float Scale { get; set; }    
+        public float Scale { get; set; }
 
         public Transform()
         {
@@ -27,6 +27,11 @@ namespace MonoGameLib.Core
             Rotation = 0f;
             Anchor = new Anchor();
             Scale = 1f;
+        }
+
+        public Vector2 Origin(Texture2D texture)
+        {
+            return new Vector2(texture.Width * Anchor.X, texture.Height * Anchor.Y);
         }
     }
 

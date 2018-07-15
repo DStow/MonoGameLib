@@ -42,7 +42,7 @@ namespace MonoGameLib.Core
 
         protected virtual void DrawObjectTexture(SpriteBatch spriteBatch, Texture2D texture)
         {
-            spriteBatch.Draw(texture, Transform.Position, null, Color.White, Transform.Rotation, Transform.Anchor, Transform.Scale, SpriteEffects.None, 1);
+            spriteBatch.Draw(texture, Transform.Position, null, Color.White, Transform.Rotation, Transform.Origin(texture), Transform.Scale, SpriteEffects.None, 1);
         }
     }
 }

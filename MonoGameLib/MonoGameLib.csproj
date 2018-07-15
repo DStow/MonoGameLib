@@ -53,6 +53,8 @@
     <Compile Include="Interfaces\IContentLoadable.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IInitializable.cs" />
+    <Compile Include="Interfaces\IScene.cs" />
+    <Compile Include="Interfaces\ISceneManager.cs" />
     <Compile Include="Interfaces\IUpdatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

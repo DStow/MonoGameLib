@@ -26,7 +26,7 @@ namespace MonoGameLib.Core
             Size = new Vector2();
             Rotation = 0f;
             Anchor = new Anchor();
-            Scale = 0f;
+            Scale = 1f;
         }
     }
 

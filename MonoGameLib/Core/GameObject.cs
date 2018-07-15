@@ -11,36 +11,14 @@ namespace MonoGameLib.Core
 {
     public class GameObject : Interfaces.IInitializable, Interfaces.IContentLoadable, Interfaces.IDrawable, Interfaces.IUpdatable
     {
-        /// <summary>
-        /// Position of this object
-        /// </summary>
-        public Vector2 Position { get; set; }
+        private Transform _tranform;
 
-        /// <summary>
-        /// Size of this object
-        /// </summary>
-        public Vector2 Size { get; set; }
-
-        /// <summary>
-        /// Area of this objects
-        /// </summary>
-        public RectangleF Area
+        public Transform Transform
         {
-            get
-            {
-                return new RectangleF(Position.X - (Size.X / 2), Position.Y - (Size.Y / 2), Size.X, Size.Y);
-            }
+            get { return _tranform; }
+            set { _tranform = value; }
         }
 
-        /// <summary>
-        /// Rotation
-        /// </summary>
-        public float Rotation { get; set; }
-
-        public virtual Vector2 Origin
-        {
-            get;
-        }
 
         public virtual void Initialize()
         {
@@ -64,7 +42,7 @@ namespace MonoGameLib.Core
 
         protected virtual void DrawObjectTexture(SpriteBatch spriteBatch, Texture2D texture)
         {
-            spriteBatch.Draw(texture, Area, null, Color.White, Rotation, Origin, SpriteEffects.None, 1);
+            spriteBatch.Draw(texture, Transform.Position, null, Color.White, Transform.Rotation, Transform.Anchor, Transform.Scale, SpriteEffects.None, 1);
         }
     }
 }

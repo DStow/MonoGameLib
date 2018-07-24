@@ -27,6 +27,8 @@ namespace MonoGameLib.Core
             {
                 _scenes.ToList()[0].Value.Initialize();
             }
+
+            _currentScene = GetStartingScene();
         }
 
         /// <summary>
@@ -34,6 +36,8 @@ namespace MonoGameLib.Core
         /// </summary>
         /// <param name="scenes"></param>
         protected abstract void CreateScenes(Dictionary<string, IScene> scenes);
+
+        protected abstract IScene GetStartingScene();
 
         public IScene GetScene(string sceneKey)
         {

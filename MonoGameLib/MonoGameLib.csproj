@@ -48,8 +48,11 @@
     <Compile Include="Core\Camera.cs" />
     <Compile Include="Core\GameObject.cs" />
     <Compile Include="Core\RectangleF.cs" />
+    <Compile Include="Core\Scene.cs" />
+    <Compile Include="Core\SceneManager.cs" />
     <Compile Include="Core\Transform.cs" />
     <Compile Include="Enumeration\Enumeration.cs" />
+    <Compile Include="Exceptions\SceneDoesNotExistException.cs" />
     <Compile Include="Interfaces\IContentLoadable.cs" />
     <Compile Include="Interfaces\IDrawable.cs" />
     <Compile Include="Interfaces\IFontManager.cs" />

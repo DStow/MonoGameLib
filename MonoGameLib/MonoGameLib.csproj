@@ -59,6 +59,7 @@
     <Compile Include="Interfaces\IUIControl.cs" />
     <Compile Include="Interfaces\IUpdatable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Timers\FixedTimer.cs" />
     <Compile Include="UI\Base\UIControl.cs" />
     <Compile Include="UI\Label.cs" />
   </ItemGroup>

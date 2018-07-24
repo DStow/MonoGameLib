@@ -81,7 +81,7 @@ namespace MonoGameLib.Core
         public Camera(int screenWidth, int screenHeight, CameraFixedSideEnum fixedOrientation, int visibleWorldUnits)
         {
             this.ScreenWidth = screenWidth;
-            this.ScreenHeight = ScreenHeight;
+            this.ScreenHeight = screenHeight;
             this.FixedOrientation = fixedOrientation;
             this.VisibleWorldUnits = visibleWorldUnits;
             this.ScreenRatio = CalculateCameraRatio();

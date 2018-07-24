@@ -26,7 +26,7 @@ namespace MonoGameLib.Core
             foreach (object o in GameObjects)
             {
                 IContentLoadable loadableObj = o as IContentLoadable;
-                if (o != null)
+                if (loadableObj != null)
                 {
                     loadableObj.LoadContent(content);
                 }
@@ -38,7 +38,7 @@ namespace MonoGameLib.Core
             foreach (object o in GameObjects)
             {
                 IUpdatable updatableObj = o as IUpdatable;
-                if (o != null)
+                if (updatableObj != null)
                 {
                     updatableObj.Update(gameTime);
                 }
@@ -50,7 +50,7 @@ namespace MonoGameLib.Core
             foreach (object o in GameObjects)
             {
                 Interfaces.IDrawable drawableObj = o as Interfaces.IDrawable;
-                if (o != null)
+                if (drawableObj != null)
                 {
                     drawableObj.Draw(spriteBatch);
                 }

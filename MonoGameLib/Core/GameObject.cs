@@ -19,6 +19,8 @@ namespace MonoGameLib.Core
             set { _tranform = value; }
         }
 
+        public bool DisposeFlag { get; set; }
+
 
         public virtual void Initialize()
         {

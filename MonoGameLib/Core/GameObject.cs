@@ -11,7 +11,7 @@ namespace MonoGameLib.Core
 {
     public class GameObject : Interfaces.IInitializable, Interfaces.IContentLoadable, Interfaces.IDrawable, Interfaces.IUpdatable
     {
-        private Transform _tranform;
+        private Transform _tranform = new Transform();
 
         public Transform Transform
         {

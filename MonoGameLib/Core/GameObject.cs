@@ -46,5 +46,12 @@ namespace MonoGameLib.Core
         {
             spriteBatch.Draw(texture, Transform.Position, null, Color.White, Transform.Rotation, Transform.Origin(texture), Transform.Scale, SpriteEffects.None, 1);
         }
+
+        protected virtual void DrawObjectTexture(SpriteBatch spriteBatch, Texture2D texture, Camera camera)
+        {
+            Vector2 pos = camera.ComputeWorldPositionToPixelPosition(Transform.Position, false);
+            float scale = Transform.Scale - (1 - camera.ScreenRatio);
+            spriteBatch.Draw(texture, pos, null, Color.White, Transform.Rotation, Transform.Origin(texture), scale, SpriteEffects.None, 1);
+        }
     }
 }

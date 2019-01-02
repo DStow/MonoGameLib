@@ -28,7 +28,7 @@ namespace MonoGameLib.Core
         {
             get
             {
-                if(FixedOrientation == CameraFixedSideEnum.Height)
+                if (FixedOrientation == CameraFixedSideEnum.Height)
                 {
                     return ScreenWidth / ScreenRatio;
                 }
@@ -46,7 +46,7 @@ namespace MonoGameLib.Core
         {
             get
             {
-                if(FixedOrientation == CameraFixedSideEnum.Width)
+                if (FixedOrientation == CameraFixedSideEnum.Width)
                 {
                     return ScreenHeight / ScreenRatio;
                 }
@@ -75,7 +75,14 @@ namespace MonoGameLib.Core
         /// <summary>
         /// How many world units are visible across the cameras fixed orientation
         /// </summary>
-        public int VisibleWorldUnits { get; set; }
+        private int _visibleWorldUnits;
+
+        public int VisibleWorldUnits
+        {
+            get { return _visibleWorldUnits; }
+            set { _visibleWorldUnits = value; ScreenRatio = CalculateCameraRatio(); }
+        }
+
         #endregion
 
         public Camera(int screenWidth, int screenHeight, CameraFixedSideEnum fixedOrientation, int visibleWorldUnits)
@@ -95,11 +102,11 @@ namespace MonoGameLib.Core
         {
             float ratio = 0;
 
-            if(FixedOrientation == CameraFixedSideEnum.Width)
+            if (FixedOrientation == CameraFixedSideEnum.Width)
             {
-                ratio = ScreenWidth / VisibleWorldUnits;
+                ratio = (float)ScreenWidth / (float)VisibleWorldUnits;
             }
-            else if(FixedOrientation == CameraFixedSideEnum.Height)
+            else if (FixedOrientation == CameraFixedSideEnum.Height)
             {
                 ratio = ScreenHeight / VisibleWorldUnits;
             }
